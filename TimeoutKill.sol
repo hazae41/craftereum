@@ -10,7 +10,7 @@ import "Craftereum.sol";
  * Contract that bets killer will kill target within the deadline
  * If so, the bettor wins the balance, else, the owner wins the balance
  **/
-contract TimeoutKill is Listener {
+contract Kill is Listener {
     Craftereum craftereum = Craftereum(0x0);
     
     address payable public issuer;
