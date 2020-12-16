@@ -87,5 +87,6 @@ contract Craftereum {
         require(msg.sender == server);
         Listener listener = Listener(ids[eventid]);
         listener.onkill(eventid, killer, target);
+        delete ids[eventid];
     }
 }

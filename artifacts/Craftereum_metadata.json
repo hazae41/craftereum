@@ -234,11 +234,11 @@
 	},
 	"sources": {
 		"localhost/Craftereum.sol": {
-			"keccak256": "0x47624db9b9ab9afde75ef3458cc740c76c75f98fa65e19d4340f74f5fbd9aa6f",
+			"keccak256": "0x56e2448fa5dc8e0289afd94135f44d18680a893c182aee9ac27687a7dc60af9c",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://247c0acfe958baec53066ece554b4efa2cedbcdaa316645ccbf639fac636d39f",
-				"dweb:/ipfs/Qme4NArkBeivhiLPHLmVmtvm6h56pChy6iHD4dcGkr14Lp"
+				"bzz-raw://625d0f56c5c8636826a41f0fe62ca3873da84ed8b7c14044ad6fdfcd7d6c555d",
+				"dweb:/ipfs/QmQLJZxQpgEzcsKZ8CC8rsukh7BPCwjTqEU11oKvnRZCKE"
 			]
 		}
 	},
