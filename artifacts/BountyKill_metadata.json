@@ -1,0 +1,191 @@
+{
+	"compiler": {
+		"version": "0.7.4+commit.3f05b770"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_target",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_expiration",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [],
+				"name": "eventid",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "expiration",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "issuer",
+				"outputs": [
+					{
+						"internalType": "address payable",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_eventid",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "_killer",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_target",
+						"type": "string"
+					}
+				],
+				"name": "onkill",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_eventid",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_amount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "_player",
+						"type": "string"
+					}
+				],
+				"name": "ontransfer",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "refund",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "target",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"onkill(uint256,string,string)": {
+					"notice": "Pay the killer with ingame EMRLD*"
+				},
+				"refund()": {
+					"notice": "Refund the issuer*"
+				}
+			},
+			"notice": "Contract that gives the balance to the first player who kills target within the deadline If the contract is expired, the issuer can be refunded*",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"localhost/BountyKill.sol": "BountyKill"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"localhost/BountyKill.sol": {
+			"keccak256": "0x596de13ce041f1c1ed9815af2dacd2d95fecfac55de50ae266b1a0986507899c",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://18a6a70aa252651bb109ca362a13edee79f62a7dd51700f21f0e95d8fd2a7d4b",
+				"dweb:/ipfs/QmRHVP32qV7hSmfMrheEHKhqJP2arkkoDuBeF5DHSqKgxM"
+			]
+		},
+		"localhost/Craftereum.sol": {
+			"keccak256": "0x2893866ece149df706d991aaeada06381e9f70147e1c906ff096798d7240d00f",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://b2ae684c6bab3e50fb6e23c674839f6fa870a9a76e187aec5234b7e486b71aa7",
+				"dweb:/ipfs/QmPKBNsyi7aRbaBPgkRWE7n7WznDgXJjRfRgrdG7UA5fSU"
+			]
+		},
+		"localhost/Utils.sol": {
+			"keccak256": "0x90d8e37a18baee8ad93b4345478c7760fe798ca3ec47b4a0cd9e9b7efb16955a",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://ba1e095b20539fa8dc538aa251aedae459a73516b7574c5e02dcdf81d003481e",
+				"dweb:/ipfs/QmWs12c4jkFNJKPy4ei9x6Booesj1FbyFQMHxL2GpC2Pex"
+			]
+		}
+	},
+	"version": 1
+}

@@ -2,8 +2,8 @@
 
 pragma solidity >=0.7.0 <0.8.0;
 
-import "Utils.sol";
-import "Craftereum.sol";
+import "./Utils.sol";
+import "./Craftereum.sol";
 
 /**
  * Contract that bets killer will kill target within the deadline

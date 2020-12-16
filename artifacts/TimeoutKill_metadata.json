@@ -1,0 +1,204 @@
+{
+	"compiler": {
+		"version": "0.7.4+commit.3f05b770"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address payable",
+						"name": "_bettor",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "_killer",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_target",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_expiration",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [],
+				"name": "bettor",
+				"outputs": [
+					{
+						"internalType": "address payable",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "eventid",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "expiration",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "issuer",
+				"outputs": [
+					{
+						"internalType": "address payable",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "killer",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_eventid",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "_killer",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_target",
+						"type": "string"
+					}
+				],
+				"name": "onkill",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "refund",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "target",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"onkill(uint256,string,string)": {
+					"notice": "Pay the bettor with blockchain EMRLD *"
+				},
+				"refund()": {
+					"notice": "Refund the issuer*"
+				}
+			},
+			"notice": "Contract that bets killer will kill target within the deadline If so, the bettor wins the balance, else, the issuer wins the balance*",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"localhost/TimeoutKill.sol": "TimeoutKill"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"localhost/Craftereum.sol": {
+			"keccak256": "0x47624db9b9ab9afde75ef3458cc740c76c75f98fa65e19d4340f74f5fbd9aa6f",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://247c0acfe958baec53066ece554b4efa2cedbcdaa316645ccbf639fac636d39f",
+				"dweb:/ipfs/Qme4NArkBeivhiLPHLmVmtvm6h56pChy6iHD4dcGkr14Lp"
+			]
+		},
+		"localhost/TimeoutKill.sol": {
+			"keccak256": "0xfa44a92a2b866d2aa44f789c3fca601719cf0b6ab059e2b2768a1b904d41746f",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://ad31795ea9dc9e7554aeab57ae44989781472f1ce32f6724102caafc63418787",
+				"dweb:/ipfs/QmdmqEyL7CrPBBE11sNNq7Epy4bv2fQoNHR4c2apzRxmr6"
+			]
+		},
+		"localhost/Utils.sol": {
+			"keccak256": "0x90d8e37a18baee8ad93b4345478c7760fe798ca3ec47b4a0cd9e9b7efb16955a",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://ba1e095b20539fa8dc538aa251aedae459a73516b7574c5e02dcdf81d003481e",
+				"dweb:/ipfs/QmWs12c4jkFNJKPy4ei9x6Booesj1FbyFQMHxL2GpC2Pex"
+			]
+		}
+	},
+	"version": 1
+}
