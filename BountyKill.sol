@@ -2,8 +2,8 @@
 
 pragma solidity >=0.7.0 <0.8.0;
 
-import "Utils.sol";
-import "Craftereum.sol";
+import "./Utils.sol";
+import "./Craftereum.sol";
 
 /**
  * Contract that gives the balance to the first player who kills target within the deadline
@@ -40,7 +40,7 @@ contract BountyKill is Listener {
         string memory _killer,
         string memory _target
     ) override public {
-        require(msg.sender == craftereum.server());
+        require(msg.sender == address(craftereum));
         require(block.timestamp < expiration);
         
         require(_eventid == eventid);

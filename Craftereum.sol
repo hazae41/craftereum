@@ -8,16 +8,10 @@ contract Listener {
         string memory _killer,
         string memory _target
     ) external virtual {}
-    
-    function ontransfer(
-        uint _eventid,
-        uint _amount,
-        string memory _player
-    ) external virtual {}
 }
 
 contract Craftereum {
-    address public server;
+    address payable public server;
     
     uint public lastid = 0;
     
@@ -32,6 +26,10 @@ contract Craftereum {
     function cancel(uint eventid) public {
         require(msg.sender == ids[eventid]);
         emit Cancel(eventid);
+    }
+    
+    function _cancelled(uint eventid) public {
+        require(msg.sender == server);
         delete ids[eventid];
     }
     
@@ -46,33 +44,12 @@ contract Craftereum {
     function transfer(
         string memory player
     ) public payable {
+        server.transfer(msg.value);
+        
         emit Transfer(
             msg.value,
             player
         );
-    }
-    
-    event OnTransfer(
-        uint eventid,
-        string player
-    );
-    
-    /**
-     * Trigger ontransfer when player transfers ingame EMRLD to your contract
-     * Set player to "" to include any player
-     **/
-    function ontransfer(
-      string memory player
-    ) public returns (uint){
-        uint eventid = lastid++;
-        ids[eventid] = msg.sender;
-        
-        emit OnTransfer(
-            eventid, 
-            player
-        );
-        
-        return eventid;
     }
     
     event OnKill(
@@ -100,5 +77,15 @@ contract Craftereum {
         );
         
         return eventid;
+    }
+
+    function _killed(
+        uint eventid,
+        string memory killer, 
+        string memory target
+    ) public {
+        require(msg.sender == server);
+        Listener listener = Listener(ids[eventid]);
+        listener.onkill(eventid, killer, target);
     }
 }

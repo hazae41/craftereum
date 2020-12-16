@@ -46,7 +46,7 @@ contract TimeoutKill is Listener {
         string memory _killer,
         string memory _target
     ) override public {
-        require(msg.sender == craftereum.server());
+        require(msg.sender == address(craftereum));
         require(block.timestamp < expiration);
         
         require(_eventid == eventid);
