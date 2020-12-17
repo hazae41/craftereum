@@ -23,6 +23,32 @@
 			},
 			{
 				"inputs": [],
+				"name": "craftereum",
+				"outputs": [
+					{
+						"internalType": "contract Craftereum",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "emeralds",
+				"outputs": [
+					{
+						"internalType": "contract Emeralds",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
 				"name": "eventid",
 				"outputs": [
 					{
@@ -84,29 +110,6 @@
 				"type": "function"
 			},
 			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "_eventid",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "_amount",
-						"type": "uint256"
-					},
-					{
-						"internalType": "string",
-						"name": "_player",
-						"type": "string"
-					}
-				],
-				"name": "ontransfer",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
 				"inputs": [],
 				"name": "refund",
 				"outputs": [],
@@ -162,20 +165,60 @@
 		"remappings": []
 	},
 	"sources": {
+		"https://raw.githubusercontent.com/OpenZeppelin/openzeppelin-contracts/master/contracts/GSN/Context.sol": {
+			"keccak256": "0x8d3cb350f04ff49cfb10aef08d87f19dcbaecc8027b0bed12f3275cd12f38cf0",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://ded47ec7c96750f9bd04bbbc84f659992d4ba901cb7b532a52cd468272cf378f",
+				"dweb:/ipfs/QmfBrGtQP7rZEqEg6Wz6jh2N2Kukpj1z5v3CGWmAqrzm96"
+			]
+		},
+		"https://raw.githubusercontent.com/OpenZeppelin/openzeppelin-contracts/master/contracts/math/SafeMath.sol": {
+			"keccak256": "0x3b21f2c8d626de3b9925ae33e972d8bf5c8b1bffb3f4ee94daeed7d0679036e6",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://7f8d45329fecbf0836ad7543330c3ecd0f8d0ffa42d4016278c3eb2215fdcdfe",
+				"dweb:/ipfs/QmXWLT7GcnHtA5NiD6MFi2CV3EWJY4wv5mLNnypqYDrxL3"
+			]
+		},
+		"https://raw.githubusercontent.com/OpenZeppelin/openzeppelin-contracts/master/contracts/token/ERC20/ERC20.sol": {
+			"keccak256": "0xcbd85c86627a47fd939f1f4ee3ba626575ff2a182e1804b29f5136394449b538",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://53c6a80c519bb9356aad28efa9a1ec31603860eb759d2dc57f545fcae1dd1aca",
+				"dweb:/ipfs/QmfRS6TtMNUHhvgLHXK21qKNnpn2S7g2Yd1fKaHKyFiJsR"
+			]
+		},
+		"https://raw.githubusercontent.com/OpenZeppelin/openzeppelin-contracts/master/contracts/token/ERC20/IERC20.sol": {
+			"keccak256": "0x5f02220344881ce43204ae4a6281145a67bc52c2bb1290a791857df3d19d78f5",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://24427744bd3e6cb73c17010119af12a318289c0253a4d9acb8576c9fb3797b08",
+				"dweb:/ipfs/QmTLDqpKRBuxGxRAmjgXt9AkXyACW3MtKzi7PYjm5iMfGC"
+			]
+		},
 		"localhost/BountyKill.sol": {
-			"keccak256": "0x596de13ce041f1c1ed9815af2dacd2d95fecfac55de50ae266b1a0986507899c",
+			"keccak256": "0x9895c17ef3349354d7c01e37c14a0f4e43ba98fb106de6221e2358de3d8e48f1",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://18a6a70aa252651bb109ca362a13edee79f62a7dd51700f21f0e95d8fd2a7d4b",
-				"dweb:/ipfs/QmRHVP32qV7hSmfMrheEHKhqJP2arkkoDuBeF5DHSqKgxM"
+				"bzz-raw://57be0520e9ed31c28ed5c395b3d1b9c0f080a2e9651703d4139f022e2f13d1c4",
+				"dweb:/ipfs/QmTQ95PGeEzgHuu2wYJeg6gxmcmqHaBCSNdsxUgQx5fLoh"
 			]
 		},
 		"localhost/Craftereum.sol": {
-			"keccak256": "0x2893866ece149df706d991aaeada06381e9f70147e1c906ff096798d7240d00f",
+			"keccak256": "0x4b6c9d8d3058f022bb1c8ebb0eab6d31078517bdfb0ae8eacc08530e67792a40",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://b2ae684c6bab3e50fb6e23c674839f6fa870a9a76e187aec5234b7e486b71aa7",
-				"dweb:/ipfs/QmPKBNsyi7aRbaBPgkRWE7n7WznDgXJjRfRgrdG7UA5fSU"
+				"bzz-raw://1d6e19ff1ac77c2377514737e6cac944dacebebc8ae35a0a023c4f406e497d0e",
+				"dweb:/ipfs/QmbyNm1d2eH5Xa23GVaADKVWRadSohGxNmxQ7bmxJHW1oo"
+			]
+		},
+		"localhost/Emeralds.sol": {
+			"keccak256": "0x51f6798e0ea71114df25eb4799a65e60e6cb67af49c393c7207a1732eec241e2",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://c3342d192d24fe692aed452403ad99bcd95061af210495635cd0ac3bb1d96940",
+				"dweb:/ipfs/QmPGUiARc2jMTjnqeJnWwJTZyDq8YNR7yrMJ72S9jAJWbW"
 			]
 		},
 		"localhost/Utils.sol": {

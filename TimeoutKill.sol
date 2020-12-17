@@ -10,7 +10,8 @@ import "./Craftereum.sol";
  * If so, the bettor wins the balance, else, the issuer wins the balance
  **/
 contract TimeoutKill is Listener {
-    Craftereum craftereum = Craftereum(0x0);
+    Craftereum public craftereum = Craftereum(0x0);
+    Emeralds public emeralds = craftereum.emeralds();
     
     address payable public issuer;
     address payable public bettor; 
@@ -45,7 +46,7 @@ contract TimeoutKill is Listener {
         uint _eventid,
         string memory _killer,
         string memory _target
-    ) override public {
+    ) external override {
         require(msg.sender == address(craftereum));
         require(block.timestamp < expiration);
         
@@ -54,17 +55,21 @@ contract TimeoutKill is Listener {
         require(Utils.equals(_killer, killer));
         
         craftereum.cancel(eventid);
-        bettor.transfer(address(this).balance);
+        
+        uint balance = emeralds.balance();
+        emeralds.transfer(bettor, balance);
     }
     
     /**
      * Refund the issuer
      **/
-    function refund() public {
+    function refund() external {
         require(msg.sender == issuer);
         require(block.timestamp > expiration);
         
         craftereum.cancel(eventid);
-        issuer.transfer(address(this).balance);
+        
+        uint balance = emeralds.balance();
+        emeralds.transfer(issuer, balance);
     }
 }

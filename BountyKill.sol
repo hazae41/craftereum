@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0
 
-pragma solidity >=0.7.0 <0.8.0;
+pragma solidity >=0.6.0 <0.8.0;
 
 import "./Utils.sol";
 import "./Craftereum.sol";
@@ -10,7 +10,8 @@ import "./Craftereum.sol";
  * If the contract is expired, the issuer can be refunded
  **/
 contract BountyKill is Listener {
-    Craftereum craftereum = Craftereum(0x0);
+    Craftereum public craftereum = Craftereum(0x0);
+    Emeralds public emeralds = craftereum.emeralds();
     
     address payable public issuer;
     
@@ -39,7 +40,7 @@ contract BountyKill is Listener {
         uint _eventid,
         string memory _killer,
         string memory _target
-    ) override public {
+    ) external override {
         require(msg.sender == address(craftereum));
         require(block.timestamp < expiration);
         
@@ -47,19 +48,21 @@ contract BountyKill is Listener {
         require(Utils.equals(_target, target));
         
         craftereum.cancel(eventid);
-        craftereum.transfer{
-            value: address(this).balance
-        }(_killer);
+        
+        uint balance = emeralds.balance();
+        craftereum.transfer(_killer, balance);
     }
     
     /**
      * Refund the issuer
      **/
-    function refund() public {
+    function refund() external {
         require(msg.sender == issuer);
         require(block.timestamp > expiration);
         
         craftereum.cancel(eventid);
-        issuer.transfer(address(this).balance);
+        
+        uint balance = emeralds.balance();
+        emeralds.transfer(issuer, balance);
     }
 }

@@ -1,8 +1,10 @@
 // SPDX-License-Identifier: GPL-3.0
 
-pragma solidity >=0.7.0 <0.8.0;
+pragma solidity >=0.6.0 <0.8.0;
 
-contract Listener {
+import "./Emeralds.sol";
+
+abstract contract Listener {
     function onkill(
         uint _eventid,
         string memory _killer,
@@ -11,6 +13,8 @@ contract Listener {
 }
 
 contract Craftereum {
+    Emeralds public emeralds;
+    
     address payable public server;
     
     uint public lastid = 0;
@@ -18,38 +22,60 @@ contract Craftereum {
     mapping(uint => address) public ids;
     
     constructor(){
+        emeralds = new Emeralds(this);
         server = msg.sender;
     }
     
+    /**
+     * Tell the server to cancel an event
+     **/
     event Cancel(uint eventid);
     
-    function cancel(uint eventid) public {
+    /**
+     * Cancel an event
+     **/
+    function cancel(uint eventid) external {
         require(msg.sender == ids[eventid]);
+       _cancel(eventid);
+    }
+    
+    /**
+     * Internal cancel shortcut
+     * Called by cancel() and event triggers
+     **/
+    function _cancel(uint eventid) internal {
+        delete ids[eventid];
         emit Cancel(eventid);
     }
     
-    function _cancelled(uint eventid) public {
-        require(msg.sender == server);
-        delete ids[eventid];
-    }
-    
+    /**
+     * Tell the server to give emeralds to a player
+     **/
     event Transfer(
-        uint amount,
-        string player
+        string player,
+        uint amount
     );
     
     /**
-     * Transfer msg.value amount of blockchain EMRLD to the given player
+     * Transfer blockchain EMRLD to a player
      **/
     function transfer(
-        string memory player
-    ) public payable {
-        server.transfer(msg.value);
-        
-        emit Transfer(
-            msg.value,
-            player
-        );
+        string memory player,
+        uint amount
+    ) external {
+        require(emeralds.burn(msg.sender, amount));
+        emit Transfer(player, amount);
+    }
+    
+    /**
+     * Transfer ingame EMRLD to the blockchain
+     **/
+    function _transfer(
+        address account,
+        uint amount
+    ) external {
+        require(msg.sender == server);
+        require(emeralds.mint(account, amount));
     }
     
     event OnKill(
@@ -66,7 +92,7 @@ contract Craftereum {
     function onkill(
         string memory killer, 
         string memory target
-    ) public returns (uint) {
+    ) external returns (uint) {
         uint eventid = lastid++;
         ids[eventid] = msg.sender;
         
@@ -79,14 +105,17 @@ contract Craftereum {
         return eventid;
     }
 
+    /**
+     * Kill event trigger
+     **/ 
     function _killed(
         uint eventid,
         string memory killer, 
         string memory target
-    ) public {
+    ) external {
         require(msg.sender == server);
         Listener listener = Listener(ids[eventid]);
         listener.onkill(eventid, killer, target);
-        emit Cancel(eventid);
+        _cancel(eventid);
     }
 }
