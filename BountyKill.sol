@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0
 
-pragma solidity >=0.6.0 <0.8.0;
+pragma solidity >=0.7.0 <0.8.0;
 
 import "./Utils.sol";
 import "./Craftereum.sol";
@@ -10,8 +10,8 @@ import "./Craftereum.sol";
  * If the contract is expired, the issuer can be refunded
  **/
 contract BountyKill is Listener {
-    Craftereum public craftereum = Craftereum(0x0);
-    Emeralds public emeralds = craftereum.emeralds();
+    Craftereum public craftereum;
+    IEmeralds public emeralds;
     
     address payable public issuer;
     
@@ -21,9 +21,13 @@ contract BountyKill is Listener {
     uint public eventid;
     
     constructor(
+        Craftereum _craftereum,
         string memory _target,
         uint _expiration
     ){
+        craftereum = _craftereum;
+        emeralds = craftereum.emeralds();
+        
         issuer = msg.sender;
 
         target = _target;
@@ -31,6 +35,10 @@ contract BountyKill is Listener {
         
         // Wait for a kill from any player to target
         eventid = craftereum.onkill("", target);
+    }
+    
+    function balance() external returns (uint) {
+        return emeralds.balance();
     }
     
     /**

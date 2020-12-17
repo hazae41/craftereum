@@ -8,6 +8,11 @@
 			{
 				"inputs": [
 					{
+						"internalType": "contract Craftereum",
+						"name": "_craftereum",
+						"type": "address"
+					},
+					{
 						"internalType": "string",
 						"name": "_target",
 						"type": "string"
@@ -20,6 +25,19 @@
 				],
 				"stateMutability": "nonpayable",
 				"type": "constructor"
+			},
+			{
+				"inputs": [],
+				"name": "balance",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
 			},
 			{
 				"inputs": [],
@@ -39,7 +57,7 @@
 				"name": "emeralds",
 				"outputs": [
 					{
-						"internalType": "contract Emeralds",
+						"internalType": "contract IEmeralds",
 						"name": "",
 						"type": "address"
 					}
@@ -198,19 +216,19 @@
 			]
 		},
 		"localhost/BountyKill.sol": {
-			"keccak256": "0x9895c17ef3349354d7c01e37c14a0f4e43ba98fb106de6221e2358de3d8e48f1",
+			"keccak256": "0xa81b9fbc6fe3505307ba6f00d6fd797d56561e8f5e6ab84f7f3af2589dfe0b28",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://57be0520e9ed31c28ed5c395b3d1b9c0f080a2e9651703d4139f022e2f13d1c4",
-				"dweb:/ipfs/QmTQ95PGeEzgHuu2wYJeg6gxmcmqHaBCSNdsxUgQx5fLoh"
+				"bzz-raw://8b218531408b199d594ec68c432c755afaa0ead670fb3b42d80f2506a28c52b8",
+				"dweb:/ipfs/QmZ5BdTCzmQyPfjvjnMghCf1nJgthyJLuRXdymMSQFDdns"
 			]
 		},
 		"localhost/Craftereum.sol": {
-			"keccak256": "0x4b6c9d8d3058f022bb1c8ebb0eab6d31078517bdfb0ae8eacc08530e67792a40",
+			"keccak256": "0xfc21b0a52862c5230fb34c081ff277c1481801d9dbb1c4165f33e0f8eb6a0b67",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://1d6e19ff1ac77c2377514737e6cac944dacebebc8ae35a0a023c4f406e497d0e",
-				"dweb:/ipfs/QmbyNm1d2eH5Xa23GVaADKVWRadSohGxNmxQ7bmxJHW1oo"
+				"bzz-raw://ec968fccf394e10b43ffb36004e30a867805dfacc40b1cecbeaf5586b772cb66",
+				"dweb:/ipfs/QmeiyLG8jVwj6PmKUXNh85JPVeMQ3hTYrRnMYr4qjzkJfz"
 			]
 		},
 		"localhost/Emeralds.sol": {

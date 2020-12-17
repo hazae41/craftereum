@@ -10,8 +10,8 @@ import "./Craftereum.sol";
  * If so, the bettor wins the balance, else, the issuer wins the balance
  **/
 contract TimeoutKill is Listener {
-    Craftereum public craftereum = Craftereum(0x0);
-    Emeralds public emeralds = craftereum.emeralds();
+    Craftereum public craftereum;
+    IEmeralds public emeralds;
     
     address payable public issuer;
     address payable public bettor; 
@@ -23,11 +23,15 @@ contract TimeoutKill is Listener {
     uint public eventid;
     
     constructor(
+        Craftereum _craftereum,
         address payable _bettor,
         string memory _killer,
         string memory _target,
         uint _expiration
     ){
+        craftereum = _craftereum;
+        emeralds = craftereum.emeralds();
+        
         issuer = msg.sender;
         bettor = _bettor;
         
@@ -37,6 +41,10 @@ contract TimeoutKill is Listener {
         
         // Wait for a kill 
         eventid = craftereum.onkill(killer, target);
+    }
+    
+    function balance() external returns (uint) {
+        return emeralds.balance();
     }
     
     /**

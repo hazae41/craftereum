@@ -8,6 +8,11 @@
 			{
 				"inputs": [
 					{
+						"internalType": "contract Craftereum",
+						"name": "_craftereum",
+						"type": "address"
+					},
+					{
 						"internalType": "address payable",
 						"name": "_bettor",
 						"type": "address"
@@ -30,6 +35,19 @@
 				],
 				"stateMutability": "nonpayable",
 				"type": "constructor"
+			},
+			{
+				"inputs": [],
+				"name": "balance",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
 			},
 			{
 				"inputs": [],
@@ -62,7 +80,7 @@
 				"name": "emeralds",
 				"outputs": [
 					{
-						"internalType": "contract Emeralds",
+						"internalType": "contract IEmeralds",
 						"name": "",
 						"type": "address"
 					}
@@ -234,27 +252,27 @@
 			]
 		},
 		"localhost/Craftereum.sol": {
-			"keccak256": "0x4b6c9d8d3058f022bb1c8ebb0eab6d31078517bdfb0ae8eacc08530e67792a40",
+			"keccak256": "0xfc21b0a52862c5230fb34c081ff277c1481801d9dbb1c4165f33e0f8eb6a0b67",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://1d6e19ff1ac77c2377514737e6cac944dacebebc8ae35a0a023c4f406e497d0e",
-				"dweb:/ipfs/QmbyNm1d2eH5Xa23GVaADKVWRadSohGxNmxQ7bmxJHW1oo"
+				"bzz-raw://ec968fccf394e10b43ffb36004e30a867805dfacc40b1cecbeaf5586b772cb66",
+				"dweb:/ipfs/QmeiyLG8jVwj6PmKUXNh85JPVeMQ3hTYrRnMYr4qjzkJfz"
 			]
 		},
 		"localhost/Emeralds.sol": {
-			"keccak256": "0x51f6798e0ea71114df25eb4799a65e60e6cb67af49c393c7207a1732eec241e2",
+			"keccak256": "0xa21aeeca6ad15454004b8cb622801a42e2765f3b24d3e19200fa89ed5b78fbef",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://c3342d192d24fe692aed452403ad99bcd95061af210495635cd0ac3bb1d96940",
-				"dweb:/ipfs/QmPGUiARc2jMTjnqeJnWwJTZyDq8YNR7yrMJ72S9jAJWbW"
+				"bzz-raw://5e82d7d17a330c3ce53085f97ae02d6d26df475a761739a9b0bf234d25198736",
+				"dweb:/ipfs/QmaAV7uyoWFokab5udhPNPVxrF3G1F1xYQwe5S8J52K8BJ"
 			]
 		},
 		"localhost/TimeoutKill.sol": {
-			"keccak256": "0xeb9a914362b15b1b0585ea8c86fcc2714c3105a40176a2b63b174199c740a889",
+			"keccak256": "0x57706920c805d202182fb1d1380b579367dd01ab6a264d32d5d9b2980467a5de",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://4ef739b026b0065752ce883ac79e3cafe74c4a284d2a76b76fdd8eac2c58afec",
-				"dweb:/ipfs/QmQxDr72Boc8kMqAEY1bD7rFCk5MkTtvExvvw7yyMtUTby"
+				"bzz-raw://b17e775a9a9cedfb7d175db2250b6d056415c7f88dc5ae572b58c4c37a6de2f6",
+				"dweb:/ipfs/QmRVFxLHtpBrpp3X6YkZMbyNitU1kY7h6Jb3k3UiqXcRWY"
 			]
 		},
 		"localhost/Utils.sol": {
