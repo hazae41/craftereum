@@ -13,7 +13,7 @@ abstract contract Listener {
 }
 
 contract Craftereum {
-    Emeralds public emeralds;
+    IEmeralds public emeralds;
     
     address payable public server;
     
