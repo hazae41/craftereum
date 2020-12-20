@@ -37,7 +37,7 @@ contract BountyKill is Listener {
         eventid = craftereum.onkill("", target);
     }
     
-    function balance() external returns (uint) {
+    function balance() external view returns (uint) {
         return emeralds.balance();
     }
     
@@ -57,8 +57,8 @@ contract BountyKill is Listener {
         
         craftereum.cancel(eventid);
         
-        uint balance = emeralds.balance();
-        craftereum.transfer(_killer, balance);
+        uint amount = emeralds.balance();
+        craftereum.transfer(_killer, amount);
     }
     
     /**
@@ -70,7 +70,7 @@ contract BountyKill is Listener {
         
         craftereum.cancel(eventid);
         
-        uint balance = emeralds.balance();
-        emeralds.transfer(issuer, balance);
+        uint amount = emeralds.balance();
+        emeralds.transfer(issuer, amount);
     }
 }

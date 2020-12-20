@@ -36,7 +36,7 @@
 						"type": "uint256"
 					}
 				],
-				"stateMutability": "nonpayable",
+				"stateMutability": "view",
 				"type": "function"
 			},
 			{
@@ -216,11 +216,11 @@
 			]
 		},
 		"localhost/BountyKill.sol": {
-			"keccak256": "0xa81b9fbc6fe3505307ba6f00d6fd797d56561e8f5e6ab84f7f3af2589dfe0b28",
+			"keccak256": "0xb2f42742084d6fd384ea5a42132d5364eb6ad7f8199f2e165993aedcb6f76119",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://8b218531408b199d594ec68c432c755afaa0ead670fb3b42d80f2506a28c52b8",
-				"dweb:/ipfs/QmZ5BdTCzmQyPfjvjnMghCf1nJgthyJLuRXdymMSQFDdns"
+				"bzz-raw://8835b66339690f301d54a4fd86cab1d838c44aaafb42cda834c0fc3dab6a0f9d",
+				"dweb:/ipfs/QmcLHUZVHPQMQUZoVaL7h9ar5v6pmNPm8WysYZ6R3eiNj7"
 			]
 		},
 		"localhost/Craftereum.sol": {
