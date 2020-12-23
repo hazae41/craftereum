@@ -16,18 +16,18 @@ contract TimeoutKill is Listener {
     address payable public issuer;
     address payable public bettor; 
     
-    string public killer;
-    string public target;
+    string public killerPlayer;
+    string public targetPlayer;
     
-    uint public expiration;
+    uint public expirationTime;
     uint public eventid;
     
     constructor(
         Craftereum _craftereum,
         address payable _bettor,
-        string memory _killer,
-        string memory _target,
-        uint _expiration
+        string memory _killerPlayer,
+        string memory _targetPlayer,
+        uint _expirationTime
     ){
         craftereum = _craftereum;
         emeralds = craftereum.emeralds();
@@ -35,15 +35,15 @@ contract TimeoutKill is Listener {
         issuer = msg.sender;
         bettor = _bettor;
         
-        killer = _killer;
-        target = _target;
-        expiration = _expiration;
+        killerPlayer = _killerPlayer;
+        targetPlayer = _targetPlayer;
+        expirationTime = _expirationTime;
         
         // Wait for a kill 
-        eventid = craftereum.onkill(killer, target);
+        eventid = craftereum.onkill(killerPlayer, targetPlayer);
     }
     
-    function balance() external returns (uint) {
+    function balance() external view returns (uint) {
         return emeralds.balance();
     }
     
@@ -52,20 +52,20 @@ contract TimeoutKill is Listener {
      **/
     function onkill(
         uint _eventid,
-        string memory _killer,
-        string memory _target
+        string memory _killerPlayer,
+        string memory _targetPlayer
     ) external override {
         require(msg.sender == address(craftereum));
-        require(block.timestamp < expiration);
+        require(block.timestamp < expirationTime);
         
         require(_eventid == eventid);
-        require(Utils.equals(_target, target));
-        require(Utils.equals(_killer, killer));
+        require(Utils.equals(_targetPlayer, targetPlayer));
+        require(Utils.equals(_killerPlayer, killerPlayer));
         
         craftereum.cancel(eventid);
         
-        uint balance = emeralds.balance();
-        emeralds.transfer(bettor, balance);
+        uint amount = emeralds.balance();
+        emeralds.transfer(bettor, amount);
     }
     
     /**
@@ -73,11 +73,11 @@ contract TimeoutKill is Listener {
      **/
     function refund() external {
         require(msg.sender == issuer);
-        require(block.timestamp > expiration);
+        require(block.timestamp > expirationTime);
         
         craftereum.cancel(eventid);
         
-        uint balance = emeralds.balance();
-        emeralds.transfer(issuer, balance);
+        uint amount = emeralds.balance();
+        emeralds.transfer(issuer, amount);
     }
 }

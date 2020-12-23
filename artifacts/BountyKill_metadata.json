@@ -14,12 +14,12 @@
 					},
 					{
 						"internalType": "string",
-						"name": "_target",
+						"name": "_targetPlayer",
 						"type": "string"
 					},
 					{
 						"internalType": "uint256",
-						"name": "_expiration",
+						"name": "_expirationTime",
 						"type": "uint256"
 					}
 				],
@@ -80,7 +80,7 @@
 			},
 			{
 				"inputs": [],
-				"name": "expiration",
+				"name": "expirationTime",
 				"outputs": [
 					{
 						"internalType": "uint256",
@@ -136,7 +136,7 @@
 			},
 			{
 				"inputs": [],
-				"name": "target",
+				"name": "targetPlayer",
 				"outputs": [
 					{
 						"internalType": "string",
@@ -216,11 +216,11 @@
 			]
 		},
 		"localhost/BountyKill.sol": {
-			"keccak256": "0xb2f42742084d6fd384ea5a42132d5364eb6ad7f8199f2e165993aedcb6f76119",
+			"keccak256": "0xe3944186bf59753321378b78e96ac459c88af8e3834f422925ecf5f9e337e6a6",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://8835b66339690f301d54a4fd86cab1d838c44aaafb42cda834c0fc3dab6a0f9d",
-				"dweb:/ipfs/QmcLHUZVHPQMQUZoVaL7h9ar5v6pmNPm8WysYZ6R3eiNj7"
+				"bzz-raw://fc19ebf8e4adcc102ee8244e7b7b022cc06c50bccb050bd9c4e46ba11ad19aad",
+				"dweb:/ipfs/Qma7EzSZxfYsC9bsSDd3qXgho4DrXxzKai3MyZAEyhAsFa"
 			]
 		},
 		"localhost/Craftereum.sol": {

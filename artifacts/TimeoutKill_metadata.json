@@ -19,17 +19,17 @@
 					},
 					{
 						"internalType": "string",
-						"name": "_killer",
+						"name": "_killerPlayer",
 						"type": "string"
 					},
 					{
 						"internalType": "string",
-						"name": "_target",
+						"name": "_targetPlayer",
 						"type": "string"
 					},
 					{
 						"internalType": "uint256",
-						"name": "_expiration",
+						"name": "_expirationTime",
 						"type": "uint256"
 					}
 				],
@@ -46,7 +46,7 @@
 						"type": "uint256"
 					}
 				],
-				"stateMutability": "nonpayable",
+				"stateMutability": "view",
 				"type": "function"
 			},
 			{
@@ -103,7 +103,7 @@
 			},
 			{
 				"inputs": [],
-				"name": "expiration",
+				"name": "expirationTime",
 				"outputs": [
 					{
 						"internalType": "uint256",
@@ -129,7 +129,7 @@
 			},
 			{
 				"inputs": [],
-				"name": "killer",
+				"name": "killerPlayer",
 				"outputs": [
 					{
 						"internalType": "string",
@@ -149,12 +149,12 @@
 					},
 					{
 						"internalType": "string",
-						"name": "_killer",
+						"name": "_killerPlayer",
 						"type": "string"
 					},
 					{
 						"internalType": "string",
-						"name": "_target",
+						"name": "_targetPlayer",
 						"type": "string"
 					}
 				],
@@ -172,7 +172,7 @@
 			},
 			{
 				"inputs": [],
-				"name": "target",
+				"name": "targetPlayer",
 				"outputs": [
 					{
 						"internalType": "string",
@@ -268,11 +268,11 @@
 			]
 		},
 		"localhost/TimeoutKill.sol": {
-			"keccak256": "0x57706920c805d202182fb1d1380b579367dd01ab6a264d32d5d9b2980467a5de",
+			"keccak256": "0x648cb88db86951fa31db8f0b2895c0c0109e098d24704e00f229c04d1b2118b9",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://b17e775a9a9cedfb7d175db2250b6d056415c7f88dc5ae572b58c4c37a6de2f6",
-				"dweb:/ipfs/QmRVFxLHtpBrpp3X6YkZMbyNitU1kY7h6Jb3k3UiqXcRWY"
+				"bzz-raw://b42240e8e9ca974480a5d8575e23460eb533539e3ca9b573566ae017bb0a6d33",
+				"dweb:/ipfs/QmSQSjjCC81euj14uGGutaCLQgekbck77mT7Ga54GBJ1sK"
 			]
 		},
 		"localhost/Utils.sol": {
