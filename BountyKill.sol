@@ -55,8 +55,6 @@ contract BountyKill is Listener {
         require(_eventid == eventid);
         require(Utils.equals(_target, targetPlayer));
         
-        craftereum.cancel(eventid);
-        
         uint amount = emeralds.balance();
         craftereum.transfer(_killer, amount);
     }
@@ -67,8 +65,6 @@ contract BountyKill is Listener {
     function refund() external {
         require(msg.sender == issuer);
         require(block.timestamp > expirationTime);
-        
-        craftereum.cancel(eventid);
         
         uint amount = emeralds.balance();
         emeralds.transfer(issuer, amount);

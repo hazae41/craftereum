@@ -268,11 +268,11 @@
 			]
 		},
 		"localhost/TimeoutKill.sol": {
-			"keccak256": "0x648cb88db86951fa31db8f0b2895c0c0109e098d24704e00f229c04d1b2118b9",
+			"keccak256": "0x89d430f1095678b8e8f75871252f5f462fe19bb6ba298ba4130fbd8449ac9d75",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://b42240e8e9ca974480a5d8575e23460eb533539e3ca9b573566ae017bb0a6d33",
-				"dweb:/ipfs/QmSQSjjCC81euj14uGGutaCLQgekbck77mT7Ga54GBJ1sK"
+				"bzz-raw://40b3541716ad85fff69b45e6ab2e8e658d12eb29543edbc82c810a43350925bb",
+				"dweb:/ipfs/QmdvkbiP19dbX2n7f5f95tjtgDUg7cJfqCjjz33kw4Qv6b"
 			]
 		},
 		"localhost/Utils.sol": {

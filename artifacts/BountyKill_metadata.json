@@ -216,11 +216,11 @@
 			]
 		},
 		"localhost/BountyKill.sol": {
-			"keccak256": "0xe3944186bf59753321378b78e96ac459c88af8e3834f422925ecf5f9e337e6a6",
+			"keccak256": "0x71820a87100208926f7f26f724510d39fec13572d9a2e5c632792732475ae507",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://fc19ebf8e4adcc102ee8244e7b7b022cc06c50bccb050bd9c4e46ba11ad19aad",
-				"dweb:/ipfs/Qma7EzSZxfYsC9bsSDd3qXgho4DrXxzKai3MyZAEyhAsFa"
+				"bzz-raw://b51ae047d2fb3a8e28c4dd52c5027f39147f9a2a0aa398b67cd9ed374dd5034c",
+				"dweb:/ipfs/QmeWGimVQ5hZ5Qu2RgQgYyyJPZzg9C9xFccrZ3GmndGQ8P"
 			]
 		},
 		"localhost/Craftereum.sol": {

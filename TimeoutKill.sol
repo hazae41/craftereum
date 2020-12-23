@@ -62,8 +62,6 @@ contract TimeoutKill is Listener {
         require(Utils.equals(_targetPlayer, targetPlayer));
         require(Utils.equals(_killerPlayer, killerPlayer));
         
-        craftereum.cancel(eventid);
-        
         uint amount = emeralds.balance();
         emeralds.transfer(bettor, amount);
     }
@@ -74,8 +72,6 @@ contract TimeoutKill is Listener {
     function refund() external {
         require(msg.sender == issuer);
         require(block.timestamp > expirationTime);
-        
-        craftereum.cancel(eventid);
         
         uint amount = emeralds.balance();
         emeralds.transfer(issuer, amount);
