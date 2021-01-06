@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.7.4+commit.3f05b770"
+		"version": "0.7.6+commit.7338295f"
 	},
 	"language": "Solidity",
 	"output": {
@@ -342,11 +342,11 @@
 			]
 		},
 		"localhost/Craftereum.sol": {
-			"keccak256": "0x4b6c9d8d3058f022bb1c8ebb0eab6d31078517bdfb0ae8eacc08530e67792a40",
+			"keccak256": "0xfc21b0a52862c5230fb34c081ff277c1481801d9dbb1c4165f33e0f8eb6a0b67",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://1d6e19ff1ac77c2377514737e6cac944dacebebc8ae35a0a023c4f406e497d0e",
-				"dweb:/ipfs/QmbyNm1d2eH5Xa23GVaADKVWRadSohGxNmxQ7bmxJHW1oo"
+				"bzz-raw://ec968fccf394e10b43ffb36004e30a867805dfacc40b1cecbeaf5586b772cb66",
+				"dweb:/ipfs/QmeiyLG8jVwj6PmKUXNh85JPVeMQ3hTYrRnMYr4qjzkJfz"
 			]
 		},
 		"localhost/Emeralds.sol": {
