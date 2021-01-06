@@ -295,7 +295,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"localhost/Emeralds.sol": "IEmeralds"
+			"localhost/IEmeralds.sol": "IEmeralds"
 		},
 		"evmVersion": "istanbul",
 		"libraries": {},
@@ -350,11 +350,19 @@
 			]
 		},
 		"localhost/Emeralds.sol": {
-			"keccak256": "0xa21aeeca6ad15454004b8cb622801a42e2765f3b24d3e19200fa89ed5b78fbef",
+			"keccak256": "0x08c97bea01508c8be3560e6aa672109d13c14381ed5c11e6a0985b62bb46556c",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://5e82d7d17a330c3ce53085f97ae02d6d26df475a761739a9b0bf234d25198736",
-				"dweb:/ipfs/QmaAV7uyoWFokab5udhPNPVxrF3G1F1xYQwe5S8J52K8BJ"
+				"bzz-raw://74353cec238f57cf31f211e0cb8fb592ff67140bd6350f025f7233986da94cb0",
+				"dweb:/ipfs/QmZsAUdXGF3BQaEjWR26dGvN5QYvdhw5JDyHHAEiCC2h5R"
+			]
+		},
+		"localhost/IEmeralds.sol": {
+			"keccak256": "0x4ce8d6ce221faec31b3dea871897ef2a4deb4a6454af7fa80d560480e06d139b",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://c48463cba55804b8ff2dcc7b0977119827dfb7d043cdcc4198c49e5c6a949bd4",
+				"dweb:/ipfs/QmXFFEEgnKdeQ5xR1sNNfAqpk2S4qcEnYAsUcMgLfbftDq"
 			]
 		}
 	},
