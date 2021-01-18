@@ -15,30 +15,26 @@ contract BountyKill is Listener {
     
     address payable public issuer;
     
-    string public targetPlayer;
+    string public target;
     
-    uint public expirationTime;
+    uint public expiration;
     uint public eventid;
     
     constructor(
         Craftereum _craftereum,
-        string memory _targetPlayer,
-        uint _expirationTime
+        string memory _target,
+        uint _expiration
     ){
         craftereum = _craftereum;
         emeralds = craftereum.emeralds();
         
         issuer = msg.sender;
 
-        targetPlayer = _targetPlayer;
-        expirationTime = _expirationTime;
+        target = _target;
+        expiration = _expiration;
         
         // Wait for a kill from any player to target
-        eventid = craftereum.onkill("", targetPlayer);
-    }
-    
-    function balance() external view returns (uint) {
-        return emeralds.balance();
+        eventid = craftereum.onkill("", target);
     }
     
     /**
@@ -50,10 +46,10 @@ contract BountyKill is Listener {
         string memory _target
     ) external override {
         require(msg.sender == address(craftereum));
-        require(block.timestamp < expirationTime);
+        require(block.timestamp * 1000 < expiration);
         
         require(_eventid == eventid);
-        require(Utils.equals(_target, targetPlayer));
+        require(Utils.equals(_target, target));
         
         uint amount = emeralds.balance();
         craftereum.transfer(_killer, amount);
@@ -64,7 +60,7 @@ contract BountyKill is Listener {
      **/
     function refund() external {
         require(msg.sender == issuer);
-        require(block.timestamp > expirationTime);
+        require(block.timestamp * 1000 > expiration);
         
         uint amount = emeralds.balance();
         emeralds.transfer(issuer, amount);
